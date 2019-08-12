@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+
+
+.home-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ngb-carousel {
+        margin-right: 40px;
+        justify-content: center;
+
+    }
+    
+    .help {
+        justify-content: center;
+    }
+
+    h2 {
+        color: red;
+        margin-top: 70px;
+        font-size: 12px;
+        align-self: center;
+
+    }
+}

@@ -1,0 +1,100 @@
+<body>
+    <div class="align" fxLayout="column" fxLayoutAlign="right">
+        <svg width="120" 
+            height="140"
+            (click) = "toggle()"
+            class="collapsible"
+            (mouseover)="handleMouseOver()"
+            (mouseout)="handleMouseOut()">
+            <circle id="menu"
+                    cx="60"
+                    cy="60"
+                    r="40"
+                    fill="none"
+                    stroke="red"
+                    />
+            <text x="60" 
+                    y="65"
+                    font-family="Lucida Sans Unicode, Lucida Grande, sans-serif"
+                    font-size="15px"
+                    fill="red"
+                    text-anchor="middle">
+                    MENU
+                </text>
+        </svg>
+    </div>
+    <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container" class="menu-content" >
+        <ul>
+            <div class="dropdown">
+                <div *ngIf="!specific; else film">
+                    <p [@hoverText]="hoverEnLargeFilm ? 'onHover': 'offHover'">FILM & ANIMATION</p>
+                    <img src="/assets/menu-icons/UIUX_logo.png"
+                        (click)="navToFilm()"
+                        (mouseenter)="hoverEnlarge('film')"
+                        (mouseleave)="hoverEnlarge('film')"
+                        [@hoverEnlarge]="hoverEnLargeFilm ? 'onHover': 'offHover'">
+                </div>
+                <ng-template #film *ngIf="specificFilm">
+                    <div><img src="/assets/menu-icons/art_logo.png"></div>
+                    <div><p>it worked</p></div>
+                </ng-template>
+            </div>
+            <div class="dropdown">
+                <div *ngIf="!specific; else painting">
+                    <p [@hoverText]="hoverEnLargePainting ? 'onHover': 'offHover'">PAINTING & 2D</p>
+                    <img src="/assets/menu-icons/art_logo.png" 
+                        (click)="navToPainting()"
+                        (mouseenter)="hoverEnlarge('painting')"
+                        (mouseleave)="hoverEnlarge('painting')"
+                        [@hoverEnlarge]="hoverEnLargePainting ? 'onHover': 'offHover'"></img>
+                </div>
+                <ng-template #painting>
+                    <div><p>PAINTING & 2D</p><img src="/assets/menu-icons/art_logo.png"></div>
+                    <div><p>it worked</p></div>
+                </ng-template>
+
+            <div [@openClose]="!specific ? 'open' : 'closed'" class="dropdown">
+                <div *ngIf="!specific; else photos">
+                    <p [@hoverText]="hoverEnLargePhotos ? 'onHover': 'offHover'">PHOTOGRAPHY</p>
+                    <img src="/assets/menu-icons/coding_logo.png"
+                        (click)="navToPhotos()"
+                        (mouseenter)="hoverEnlarge('photos')"
+                        (mouseleave)="hoverEnlarge('photos')"
+                        [@hoverEnlarge]="hoverEnLargePhotos ? 'onHover': 'offHover'">
+                </div>
+                <ng-template #photos *ngIf="specificPhotos">
+                    <div><img src="/assets/menu-icons/art_logo.png"></div>
+                    <div><p>it worked</p></div>
+                </ng-template>
+            </div>
+            <div [@openClose]="!specific ? 'open' : 'closed'" class="dropdown">
+                <div *ngIf="!specific; else design">
+                    <p [@hoverText]="hoverEnLargeDesign ? 'onHover': 'offHover'">DESIGN & WEB</p>
+                    <img src="/assets/menu-icons/art_logo.png"
+                        (click)="navToDesign()"
+                        (mouseenter)="hoverEnlarge('design')"
+                        (mouseleave)="hoverEnlarge('design')"
+                        [@hoverEnlarge]="hoverEnLargeDesign ? 'onHover': 'offHover'">
+                </div>
+                <ng-template #design *ngIf="specificDesign">
+                    <div><img src="/assets/menu-icons/art_logo.png"></div>
+                    <div><p>it worked</p></div>
+                </ng-template>
+            </div>
+            <div [@openClose]="!specific ? 'open' : 'closed'" class="dropdown">
+                <div *ngIf="!specific; else vr">
+                    <p [@hoverText]="hoverEnLargeVR ? 'onHover': 'offHover'">VR/AR & DIGITAL MEDIA</p>
+                    <img src="/assets/menu-icons/art_logo.png"
+                        (click)="navToVR()"
+                        (mouseenter)="hoverEnlarge('vr')"
+                        (mouseleave)="hoverEnlarge('vr')"
+                        [@hoverEnlarge]="hoverEnLargeVR ? 'onHover': 'offHover'">
+                </div>
+                <ng-template #vr *ngIf="specificVR">
+                    <div><img src="/assets/menu-icons/art_logo.png"></div>
+                    <div><p>it worked</p></div>
+                </ng-template>
+            </div>
+        </ul>
+    </div>
+</body>

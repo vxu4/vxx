@@ -1,0 +1,35 @@
+
+
+body {
+    .align {
+        position: right;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        svg {
+            cursor: pointer;
+            width: 200px;
+        }
+    }
+    
+    .menu-content {
+        
+        .dropdown {
+            display: flex;
+            flex-direction: row;
+            margin-right: 85px;
+            justify-content: flex-end;
+        }
+        img {
+            width: 60px;
+            margin-top: 15px;
+            opacity: 0.6;
+        }
+    }
+}
+
+p{
+    display: inline;
+    align-self: left;
+}
+
