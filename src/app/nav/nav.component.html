@@ -34,19 +34,21 @@
                         (mouseleave)="hoverEnlarge('film')"
                         [@hoverEnlarge]="hoverEnLargeFilm ? 'onHover': 'offHover'">
                 </div>
-                <ng-template #film *ngIf="specificFilm">
-                    <div><img src="/assets/menu-icons/art_logo.png"></div>
-                    <div><p>it worked</p></div>
+                <ng-template #film>
+                    <div *ngIf="specificFilm">
+                        <div><img src="/assets/menu-icons/art_logo.png"></div>
+                        <div><p>it worked</p></div>
+                    </div>
                 </ng-template>
             </div>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <div *ngIf="!specific; else painting">
                     <p [@hoverText]="hoverEnLargePainting ? 'onHover': 'offHover'">PAINTING & 2D</p>
                     <img src="/assets/menu-icons/art_logo.png" 
                         (click)="navToPainting()"
                         (mouseenter)="hoverEnlarge('painting')"
                         (mouseleave)="hoverEnlarge('painting')"
-                        [@hoverEnlarge]="hoverEnLargePainting ? 'onHover': 'offHover'"></img>
+                        [@hoverEnlarge]="hoverEnLargePainting ? 'onHover': 'offHover'">
                 </div>
                 <ng-template #painting>
                     <div><p>PAINTING & 2D</p><img src="/assets/menu-icons/art_logo.png"></div>
@@ -94,7 +96,7 @@
                     <div><img src="/assets/menu-icons/art_logo.png"></div>
                     <div><p>it worked</p></div>
                 </ng-template>
-            </div>
+            </div> -->
         </ul>
     </div>
 </body>
