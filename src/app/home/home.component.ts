@@ -8,18 +8,25 @@ import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
 })
 export class HomeComponent implements OnInit {
-  images = [1, 2, 3, 4].map(() => "./assets/paintings/growingDance/1.jpg");
+  images = ["./assets/paintings/growingDance/Painting-16.JPEG",
+            "./assets/paintings/handMountains/Painting-5.JPEG",
+            "./assets/paintings/treeForms/tree-forms.JPG",
+            "./assets/photos/trio/natasha1.jpg"];
+
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
-    config.interval = 10000;
-    config.wrap = false;
-    config.keyboard = false;
-    config.pauseOnHover = false;
+    config.interval = 900;
+    config.wrap = true;
+    config.keyboard = true;
+    config.pauseOnHover = true;
+    config.showNavigationArrows = false;
+    config.showNavigationIndicators = false;
   }
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
 
   ngOnInit() {
+    console.log(this.images);
   }
 
 }
