@@ -1,6 +1,11 @@
 
 
 body {
+    img {
+        width: 60px;
+        margin-top: 15px;
+        opacity: 0.6;
+    }
     .align {
         position: right;
         display: flex;
@@ -13,7 +18,6 @@ body {
     }
     
     .menu-content {
-        
         .dropdown {
             display: flex;
             flex-direction: row;
@@ -24,6 +28,10 @@ body {
             width: 60px;
             margin-top: 15px;
             opacity: 0.6;
+        }
+        .specific-category {
+            color: red;
+            margin-right: 20px;
         }
     }
 }

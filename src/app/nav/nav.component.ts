@@ -9,6 +9,7 @@ import {
   // ...
 } from '@angular/animations';
 import { routeUrls } from '../route-urls';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-nav',
@@ -107,12 +108,16 @@ export class NavComponent implements OnInit {
       this.isOpen = !this.isOpen;
     }
     this.specificPainting = false;
+    this.specificFilm = false;
+    this.specificDesign = false;
+    this.specificPhotos = false;
+    this.specificVR = false;
     this.specific = false;
   }
 
   public handleMouseOver() {
-    const d3 = this.d3;
-      const circle = d3.select("#menu")
+    // const d3 = this.d3;
+      const circle = d3.select("#menu");
       circle
         .transition()
         .duration(250)
@@ -121,8 +126,9 @@ export class NavComponent implements OnInit {
   }
 
   public handleMouseOut() {
-    const d3 = this.d3;
-      const circle = d3.select("#menu")
+    // const d3 = this.d3;
+      const circle = d3.select("#menu");
+      circle
         .transition()
         .duration(250)
         // .delay(3)
@@ -131,51 +137,75 @@ export class NavComponent implements OnInit {
 
   public hoverEnlarge(category: string) {
     if (category === 'painting') {
-      this.hoverEnLargePainting = !this.hoverEnLargePainting;
-    } else if (category === 'photos') {
+      if (!this.specificPainting) {
+        this.hoverEnLargePainting = !this.hoverEnLargePainting;
+      } else {
+        this.hoverEnLargePainting = true;
+      }
+    } else if ((category === 'photos') && (!this.specificPhotos)) {
       this.hoverEnLargePhotos = !this.hoverEnLargePhotos;
-    } else if (category === 'film') {
+    } else if ((category === 'film') && (!this.specificFilm)) {
       this.hoverEnLargeFilm = !this.hoverEnLargeFilm;
-    } else if (category === 'design') {
+    } else if ((category === 'design') && (!this.specificDesign)) {
       this.hoverEnLargeDesign = !this.hoverEnLargeDesign;
-    } else if (category === 'vr') {
+    } else if ((category === 'vr') && (!this.specificVR)) {
       this.hoverEnLargeVR = !this.hoverEnLargeVR;
+    }
+  }
+  
+  cancelOtherHovers(cat : string) {
+    if (cat !== 'painting') {
+      this.hoverEnLargePainting = false;
+    } 
+    if (cat !== 'vr') {
+      this.hoverEnLargeVR = false;
+    } 
+    if (cat !== 'design') {
+      this.hoverEnLargeDesign = false;
+    } 
+    if (cat !== 'photos') {
+      this.hoverEnLargePhotos = false;
+    } 
+    if (cat !== 'film') {
+      this.hoverEnLargeFilm = false;
     }
   }
 
   navToPainting() {
-    this.specific = !this.specific;
-    this.specificPainting = !this.specificPainting;
-    this.hoverEnLargePainting = !this.hoverEnLargePainting;
+    this.specific = true;
+    this.specificPainting = true;
     this.router.navigateByUrl(routeUrls.paintings);
+    this.cancelOtherHovers('painting');
   }
 
   navToFilm() {
-    this.specific = !this.specific;
-    this.specificFilm = !this.specificFilm;
-    this.hoverEnLargeFilm = !this.hoverEnLargeFilm;
+    this.specific = true;
+    this.specificFilm = true;
     this.router.navigateByUrl(routeUrls.filmAnimation);
+    this.cancelOtherHovers('film');
   }
 
   navToDesign() {
-    this.specific = !this.specific;
-    this.specificDesign = !this.specificDesign;
-    this.hoverEnLargeDesign = !this.hoverEnLargeDesign;
+    this.specific = true;
+    this.specificDesign = true;
     this.router.navigateByUrl(routeUrls.design);
+    this.cancelOtherHovers('design');
+
   }
 
   navToPhotos() {
-    this.specific = !this.specific;
-    this.specificPhotos = !this.specificPhotos;
-    this.hoverEnLargePhotos = !this.hoverEnLargePhotos;
+    this.specific = true;
+    this.specificPhotos = true;
     this.router.navigateByUrl(routeUrls.photos);
+    this.cancelOtherHovers('photos');
+
   }
 
   navToVR() {
-    this.specific = !this.specific;
-    this.specificVR = !this.specificVR;
-    this.hoverEnLargeVR = !this.hoverEnLargeVR;
+    this.specific = true;
+    this.specificVR = true;
     this.router.navigateByUrl(routeUrls.vr);
-  }
+    this.cancelOtherHovers('vr');
 
+  }
 }

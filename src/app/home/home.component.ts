@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
 })
 export class HomeComponent implements OnInit {
-  images = [1, 2, 3, 4].map(() => "/assets/paintings/growingDance/1.jpg");
+  images = [1, 2, 3, 4].map(() => "./assets/paintings/growingDance/1.jpg");
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
     config.interval = 10000;
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     config.keyboard = false;
     config.pauseOnHover = false;
   }
+  @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
 
   ngOnInit() {

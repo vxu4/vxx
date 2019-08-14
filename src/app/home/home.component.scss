@@ -14,14 +14,7 @@
     }
     
     .help {
+        display: flex;
         justify-content: center;
-    }
-
-    h2 {
-        color: red;
-        margin-top: 70px;
-        font-size: 12px;
-        align-self: center;
-
     }
 }

@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 html, body {
     overflow: auto;
     min-height: 100%;
@@ -36,12 +38,26 @@ ul {
 }
 
 h1 {
-    color: black;
+    color: red;
     margin: 0px 0px 50px 100px;
     font-weight: bold;
     text-orientation: sideways-right;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+}
+
+h2 {
+    color: black;
+    font-weight: lighter;
+    font-size: 160px;
+    font-style: oblique;
+    margin-top: 40px;
+}
+
+h3 {
+    color: red;
+    margin-top: 15px;
+    align-content: center;
 }
 
 img {
