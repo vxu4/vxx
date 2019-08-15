@@ -70,12 +70,28 @@ import * as d3 from 'd3';
         animate('0.3s')
       ]),
     ]), 
+    trigger('fullOverlay', [
+      state('open', style({
+        height: '100%',
+      })),
+      state('closed', style({
+        height: '0%',
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.7s')
+      ]),
+    ]),
   ],
 })
 export class NavComponent implements OnInit {
   private d3: any;
   public error: string;
   isOpen = false;
+  fullOver = false;
+
   specific = false;
   specificPainting = false;
   specificFilm = false;
@@ -113,6 +129,11 @@ export class NavComponent implements OnInit {
     this.specificPhotos = false;
     this.specificVR = false;
     this.specific = false;
+  }
+
+  fullscreenOverlay() {
+    this.fullOver = !this.fullOver;
+    console.log(this.fullOver);
   }
 
   public handleMouseOver() {
@@ -206,6 +227,5 @@ export class NavComponent implements OnInit {
     this.specificVR = true;
     this.router.navigateByUrl(routeUrls.vr);
     this.cancelOtherHovers('vr');
-
   }
 }

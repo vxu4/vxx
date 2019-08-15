@@ -4,70 +4,90 @@ ngb-carousel {
     height: inherit;
 }
 
-.carousel-inner {
-    overflow: visible;
+marquee {
+    z-index: 0;
 }
 
-.carousel-item {
-    display: flex !important;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.2s ease-in-out, visibility 1.2s;
-    z-index: -1;
-    position: absolute;
+.center {
+    display: flex;
+    justify-content: center;
 }
-
-.carousel-item.active{
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-}
-
-.carousel-control-prev {
-     z-index: 20;
-}
-
-
-.carousel-control-next {
-     z-index: 20;
-}
-
-.carousel-indicators{
-    z-index: 20;
-}
-
 
 .home-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media only screen and (min-width: 1200px) {
+        .circle-container {
+            margin: 15px 0px 0px 30px ;
+            z-index: 999;
+            justify-content: center;
+            @include on-circle($item-count: 6, $circle-size: 40em, $item-size: 5em); 
+            // margin: 5em auto 0;
+            // border: solid 5px tomato;
+            
+            img { 
+                display: block; 
+                max-width: 100%; 
+                //   border-radius: 50%;
+                //   filter: grayscale(100%);
+                //   border: solid 5px tomato;
+                opacity: 0.5;
+                transition: .15s;
+                z-index: 0;
+                
+                &:hover,
+                &:active {
+                    opacity: 1;
+                    width: 6em;
+                    filter: grayscale(0);
+                }
+            }
+        }
+        .overlay {
+            z-index: 0;
+            display: block;
+            position: fixed;
+            left: 380px;
+            top: 130px;
+            width: 100px;
+        }
+        .mobile {
+            display: none;
+        }        
+    }
+    @media only screen and (max-width: 1200px) {
+        .circle-container  {
+            display: none;
+        }
+        
+        .mobile {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            // z-index: 99999;
+            img {
+                margin: 15px;
+                height: 100%;
+                width: 100%;
+                // max-width: 600px;
+            }
 
-    ngb-carousel {
-        // margin-right: 40px;
-        justify-content: center;
-        .carousel-item {
-            /* Force to always be block */
-            display: block !important;
-            z-index: 1;
-            position: absolute;
-            transform: translateX(100%);
-            opacity: 0;
-            transition:all  0.2s;
-            visibility: hidden;
-          }
-          
-          .carousel-item.active {
-            position: relative;
-            transform: translateX(0);
-            visibility: visible ;
-            opacity: 1;
-          }
+        }
+
+        ngb-carousel {
+            display: none;
+        }
+
+        .carousel-inner {
+            display: none;
+        }
+
+        .overlay {
+            display: none;
+        }
     }
-    
-    .help {
-        display: flex;
-        justify-content: center;
-    }
+
 
     h3 {
         margin-top: 50px;
