@@ -21,6 +21,11 @@ body {
                     fill-opacity: none;
                 }
             }
+
+            p {
+                font-style: oblique;
+                color: gray;
+            }
         }
         
         img {
@@ -88,6 +93,7 @@ body {
                     p {
                         font-size: 13px;
                         color: white;
+                        font-style: oblique;
                     }
                     .cat {
                         padding-top: 30px;
@@ -137,12 +143,12 @@ body {
 
     .overlay-menu-content {
         img {
-            width: 50px;
+            width: 40px;
         }
     }
 }
 
-p{
+p {
     display: inline;
     align-self: left;
 }

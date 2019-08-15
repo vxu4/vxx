@@ -38,12 +38,13 @@ import {
   ]
 })
 export class HomeComponent implements OnInit {
-  images = ["./assets/paintings/growingDance/Painting-16.JPEG",
+  images = ["./assets/photos/trio/natasha1.jpg",
+  "./assets/paintings/growingDance/Painting-16.JPEG",
             "./assets/paintings/treeForms/tree-forms.JPG",
             
             "./assets/paintings/patterns/patterns.jpg",
             
-            "./assets/photos/trio/natasha1.jpg"];
+            ];
 
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree

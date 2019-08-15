@@ -72,7 +72,7 @@ import * as d3 from 'd3';
     ]), 
     trigger('fullOverlay', [
       state('open', style({
-        width: '50%',
+        width: '60%',
       })),
       state('closed', style({
         width: '0%',
