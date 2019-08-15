@@ -40,8 +40,43 @@ body {
         }
         
         .mobile {
-            margin: 5px;
+            margin: 2px;
+            svg {
+                position: fixed;
+                top: 0px;
+                right: 10px;
+                z-index: 400;
+                width: 100px;
+            }
+
+            .overlay-menu-content {
+                margin-top: 90px;
+                display: flex;
+                justify-content: space-between;
+                align-content: space-around;
+                align-items: left;
+                flex-direction: column;
+    
+                .specific-category {
+                    margin-right: 23px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    p {
+                        font-size: 30px;
+                        color: rgba(172, 165, 165, 0.575);
+                    }
+                    .cat {
+                        padding-top: 20px;
+                    }
+                    img {
+                        margin: 15px;
+                        // width: 100px;
+                    }
+                }
+            }
         }
+
+
     }
 
     .menu-content {

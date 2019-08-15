@@ -17,12 +17,19 @@
 
 @media only screen and (max-width: 1200px) {
     .side-bar {
-        justify-content: flex-start;
+        // justify-content: flex-start;
+        position: fixed;
+        top: 0px;
+        background-color: white;
     
         #logo {
-            width: 100px;
-            margin: 5px ;
+            width: 80px;
+            margin: 5px;
         }
+    }
+
+    .main {
+        margin-top: 60px;
     }
 
     app-nav {
