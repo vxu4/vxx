@@ -44,7 +44,7 @@ body {
             svg {
                 position: fixed;
                 top: 0px;
-                right: 10px;
+                right: 0px;
                 z-index: 400;
                 width: 100px;
             }
@@ -58,7 +58,7 @@ body {
                 flex-direction: column;
     
                 .specific-category {
-                    margin-right: 23px;
+                    margin-right: 13px;
                     display: flex;
                     flex-direction: row-reverse;
                     p {
@@ -106,7 +106,7 @@ body {
         top: 0;
         left: 0;
         background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0, 0.9);
+        background-color: rgba(255,255,255, 0.8);
         overflow-y: hidden;
         transition: 0.5s;
     }
