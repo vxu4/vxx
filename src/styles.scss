@@ -199,6 +199,63 @@ ngb-carousel {
     animation-delay: .5s;
   }
 
+//scrolling ----------
+
+.marquee {
+    width: auto;
+    height: 3000px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-content {
+    display: block;
+    margin-top: 5px;
+    animation: marquee 10s linear infinite;
+  }
+  .item-collection-1 {
+    position: relative;
+    top: 0%;
+    animation: swap 10s linear infinite;
+  }
+  @keyframes swap {
+    0%, 50% {
+      top: 0%;
+    }
+    50.01%,
+    100% {
+      top: 100%;
+    }
+  }
+  .marquee-content:hover {
+    animation-play-state: paused
+  }
+  .item1 {
+    display: block;
+    height: auto;
+    width: auto;
+    // background: cyan;
+    // vertical-align: top;
+    margin-bottom: 15px;
+  }
+  .item2 {
+    display: block;
+    height: auto;
+    width: auto;
+    // background: magenta;
+    // vertical-align: top;
+    margin-bottom: 15px;
+  }
+  /* Transition */
+  
+  @keyframes marquee {
+    0% {
+      transform: translateY(0)
+    }
+    100% {
+      transform: translateY(-100%)
+    }
+  }
 a { text-decoration: none; color:black } /* Globally */
 
 /* Each state */

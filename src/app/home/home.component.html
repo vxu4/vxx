@@ -3,7 +3,7 @@
         <!-- <marquee behavior="scroll" direction="right" scrollAmount=25>
             <h2> Design --- Painting</h2>
         </marquee> -->
-        <div class="web">
+        <!-- <div class="web">
             <ul class='circle-container'>
                 <li><img src='./assets/menu-icons/film_logo.png' alt="..."
                     (mouseenter)="display('painting')"
@@ -49,10 +49,37 @@
                         </ng-template>
                 </ngb-carousel>
             </div>
+        </div> -->
+        <div class="marquee">
+            <div class="marquee-content">
+            <!-- <marquee behavior="scroll" direction="up" scrollAmount=25> -->
+                    <span class="item-collection-1">
+                        <span class="item1"><img [src]="images[0]" alt="Random first slide"></span>
+                        <span class="item1"><img [src]="images[1]" alt="Random first slide"></span>
+                        <span class="item1"><img [src]="images[2]" alt="Random first slide"></span>
+                        <span class="item1"><img [src]="images[3]" alt="Random first slide"></span>
+                        <span class="item1"><img [src]="images[0]" alt="Random first slide"></span>
+                    </span>
+            <!-- </marquee> -->
+            </div>
+            <div class="marquee">
+                <div class="marquee-content">
+                    <span class="item-collection-1">
+                    <span class="item1"><a href="http://www.google.com">soon soon soon soon soon soon soon soon soon soon soon soon soon soon</a></span>
+                    <span class="item1"><a href="http://www.google.com">soon soon soon soon soon soon soon soon soon soon soon soon soon soon</a></span>
+                
+                    </span>
+                    <span class="item-collection-2">
+                    <span class="item2"><a href="http://www.google.com">soon soon soon soon soon soon soon soon soon soon soon soon soon soon</a></span>
+                    <span class="item2"><a href="http://www.google.com">soon soon soon soon soon soon soon soon soon soon soon soon soon soon</a></span>
+                
+                    </span>
+                </div>
+            <div>
         </div>
-        <div class="mobile">
-            <img [src]="images[0]" alt="Random first slide">
-            <!-- <div class="categories">
+     </div>
+
+                 <!-- <div class="categories">
                 <span class="horizontal">
                     <h3 class="space">Painting & 2D</h3>
                     <h3>Film & Animation</h3>
@@ -66,8 +93,3 @@
                     <h3>Contact & About</h3>
                 </span>
             </div> -->
-            <img [src]="images[1]" alt="Random first slide">
-            <img [src]="images[2]" alt="Random first slide">
-            <img [src]="images[3]" alt="Random first slide">
-        </div>
-     </div>
