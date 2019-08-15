@@ -39,8 +39,10 @@ import {
 })
 export class HomeComponent implements OnInit {
   images = ["./assets/paintings/growingDance/Painting-16.JPEG",
-            "./assets/paintings/handMountains/Painting-5.JPEG",
             "./assets/paintings/treeForms/tree-forms.JPG",
+            
+            "./assets/paintings/patterns/patterns.jpg",
+            
             "./assets/photos/trio/natasha1.jpg"];
 
   constructor(config: NgbCarouselConfig) {

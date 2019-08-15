@@ -72,10 +72,10 @@ import * as d3 from 'd3';
     ]), 
     trigger('fullOverlay', [
       state('open', style({
-        height: '100%',
+        width: '50%',
       })),
       state('closed', style({
-        height: '0%',
+        width: '0%',
       })),
       transition('open => closed', [
         animate('1s')
