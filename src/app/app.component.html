@@ -4,12 +4,15 @@
 <body>
   <div class="main">
     <div class="side-bar">
-        <div ><img id="logo" src="./assets/logo.png"></div>
+      <div class="header">
+        <div><img id="logo" src="./assets/logo2.png"></div>
         <div><h1 (click)="navToHome()">VICTORIA  XU</h1></div>
+      </div>
+      <div>
+          <app-nav></app-nav>
+      </div>
     </div>
     <router-outlet></router-outlet>
-    <div>
-        <app-nav></app-nav>
-    </div>
+
   </div>
 </body>
