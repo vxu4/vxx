@@ -87,14 +87,18 @@ ngb-carousel {
                 color: rgba(253, 0, 0, 0.5);
             }
 
+
             h4 {
                 color: red;
                 font-family: "Pontano Sans", sans-serif;
                 margin: 0;
                 font-style: oblique;
                 font-weight: 1000;
-                font-size: 35px;
+                font-size: 40px;
             }
+            
+
+
 
             #first-image {
                 margin: 0;
@@ -126,7 +130,7 @@ ngb-carousel {
             //     position: relative;
             // }
             img {
-                // margin-bottom: 50px;
+                margin-top: 50px;
                 height: 100%;
                 width: 100%;
                 // max-width: 600px;
