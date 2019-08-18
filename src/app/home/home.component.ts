@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     config.showNavigationIndicators = false;
   }
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
-  @Input() selected: boolean = false;
+  @Input() selected = false;
   flyPosition = 'right';
   displayPainting = false;
   isOpen = false;
@@ -65,19 +65,19 @@ export class HomeComponent implements OnInit {
 
   onAnimationDone(event) {
     // hide a slide after animation completes
-    if (event.fromState != 'void' && event.toState != 'selected' && this.flyPosition != 'selected') {
+    if (event.fromState !== 'void' && event.toState !== 'selected' && this.flyPosition !== 'selected') {
         this.selected = false;
     }
 
     // set the flyPosition for the selected element when it's first displayed
-    if (event.fromState == 'void' && this.selected) {
-        this.flyPosition= "selected";
+    if (event.fromState === 'void' && this.selected) {
+        this.flyPosition = "selected";
     }
   }
 
   select() {
       this.selected = true;
-      this.flyPosition= "selected";
+      this.flyPosition = "selected";
   }
 
   display(cat: string) {
