@@ -1,0 +1,24 @@
+.film-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .film-section {
+        margin-top: 50px;
+
+        p {
+            color: gray;
+        }
+
+        .label {
+            display: flex;
+            flex-direction: row-reverse;
+            // align-items: flex-end;
+        }
+
+        img {
+            max-width: 85vw;
+            height: auto;
+        }
+    }
+}

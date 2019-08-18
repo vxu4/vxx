@@ -1,0 +1,249 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Actor|Emblema+One|Racing+Sans+One|Archivo+Black|Exo:900|Work+Sans&display=swap');
+
+html, body {
+    overflow: auto;
+    min-height: 100%;
+    background-color: rgba(0,0,0,0) !important;
+
+}
+
+.main {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+body {
+    cursor: url("/assets/keithHarringCursor.png"), auto;
+}
+
+
+
+//circle 
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+    position: relative;
+    width:  $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border-radius: 50%; 
+    list-style: none;       
+    
+    > * {
+      display: block;
+      position: absolute;
+      top:  50%; 
+      left: 50%;
+      width:  $item-size;
+      height: $item-size;
+      margin: -($item-size / 2);
+    
+      $angle: (360 / $item-count);
+      $rot: 0;
+  
+      @for $i from 1 through $item-count {
+        &:nth-of-type(#{$i}) {
+          transform: 
+            rotate($rot * 1deg) 
+            translate($circle-size / 2) 
+            rotate($rot * -1deg);
+        }
+  
+        $rot: $rot + $angle;
+      }
+    }
+  }
+
+//global header styles-------------------------
+
+h1 {
+    color: red;
+    font-weight: 9400;
+    // font-style: bold;
+    font-family: 'Racing Sans One', sans-serif;
+}
+
+h2 {
+    color: red;
+    font-weight: lighter;
+    font-size: 160px;
+    font-style: oblique;
+    margin-top: 40px;
+}
+
+h3 {
+    color: red;
+    margin-top: 10px;
+    align-content: center;
+}
+
+
+h4 {
+  color: red;
+  font-family: "Pontano Sans", sans-serif;
+  margin: 0;
+  font-style: oblique;
+  font-weight: 1000;
+  font-size: 35px;
+}
+
+//global image------------
+img {
+    max-height: 600px;
+    max-width: 800px;
+}
+
+// .body {
+//     width: 1000px;
+// }
+
+//carousel-------------------------
+
+ngb-carousel {
+    width: inherit;
+    height: inherit;
+}
+.carousel-inner {
+    height: 800px;
+    width: 900px;
+  }
+  .carousel-item .carousel-caption {
+    color: black;
+  }
+  
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: auto;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0;
+    display: block !important;
+    transform: translateX(100%);
+  }
+  
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  
+  .carousel-item.active {
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    transition-delay: .5s;
+    transform: none;
+    animation: slideFromLeft 2s;
+    animation-delay: .5s;
+  }
+
+//scrolling ----------
+
+.marquee {
+    width: auto;
+    height: 2800px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-content {
+    display: block;
+    margin-top: 5px;
+    animation: marquee 9s linear infinite;
+  }
+  .item-collection-1 {
+    position: relative;
+    top: 0%;
+    animation: swap 9s linear infinite;
+  }
+  @keyframes swap {
+    0%, 50% {
+      top: 0%;
+    }
+    50.01%,
+    100% {
+      top: 100%;
+    }
+  }
+  .marquee-content:hover {
+    animation-play-state: paused
+  }
+  .item1 {
+    display: block;
+    height: auto;
+    width: auto;
+    // background: cyan;
+    // vertical-align: top;
+    margin-bottom: 15px;
+  }
+  .item2 {
+    display: block;
+    height: auto;
+    width: auto;
+    // background: magenta;
+    // vertical-align: top;
+    margin-bottom: 15px;
+  }
+  /* Transition */
+  
+  @keyframes marquee {
+    0% {
+      transform: translateY(0)
+    }
+    100% {
+      transform: translateY(-100%)
+    }
+  }
+a { text-decoration: none; color:black } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:red; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color:red }
+
+.collapsible {
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    align-self: left;
+    outline: none;
+    font-size: 16px;
+}
+
+.active, .collapsible:hover {
+    /* background-color: #555; */
+    font-weight: 6;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+}
+
+
+
+
+

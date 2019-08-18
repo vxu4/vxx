@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>Victoria Xu</title>
+    <link rel = "stylesheet" type = "text/css" href = "growingDance.css" />
+
+</head>
+<div class="main">
+    <div class="side-bar">
+        <div><h1>VICTORIA</h1></div>
+        <div><h1>XU</h1></div>
+        <div class="nav">
+            <ul>
+                <button class="collapsible">Painting & 2D Media</button>
+                <div class="content">
+                    <ul>
+                        <div class="dropdown"><a href="">Growing Dance</a></div>
+                        <div class="dropdown"><a href="">Skin, Land. Mountains, Hands.</a></div>
+                        <div class="dropdown"><a href="">Elements and People</a></div>
+                        <div class="dropdown"><a href="">Lil Red goes on a journey</a></div>
+                        <div class="dropdown"><a href="">Apophenia</a></div>
+                        <div class="dropdown"><a href="">Dancing prints</a></div>
+                        <div class="dropdown"><a href="">Pen portraits</a></div>
+                    </ul>
+                </div>
+                <button class="collapsible">Photography</button>
+                <div class="content-active">
+                    <ul>
+                        <div class="dropdown"><a href="../../photos/trio/trio.html">TRIO</a></div>
+                        <div class="dropdown"><a href="../../photos/greenhouse/greenhouse.html">Boniat & Daneva</a></div>
+                        <div class="dropdown"><a href="">Belu</a></div>
+                        <div class="dropdown"><a href="">Kids with Curls</a></div>
+                        <div class="dropdown"><a href="">Fizzle</a></div>
+                    </ul>
+                </div> 
+                <button class="collapsible">Film & Animation</button>
+                <div class="content">
+                    <ul>
+                        <div class="dropdown"><a href="">Between Light & Sound, DP</a></div>
+                        <div class="dropdown"><a href="">Belu, Propane Beauty</a></div>
+                        <div class="dropdown"><a href="">Finding Home, animation</a></div>
+                        <div class="dropdown"><a href="">If you grow, poem video</a></div>
+                        <div class="dropdown"><a href="">A Plan To Seek A Map, personal project</a></div>
+                        <div class="dropdown"><a href="">Sometimes I Want to Cut Off My Hands, DP</a></div>
+                        <div class="dropdown"><a href="">2020, AC</a></div> 
+                    </ul>
+                </div> 
+            </ul>
+        </div>
+    </div>
+    
+    <!-- <div>
+        <img src="liana1.jpg">
+    </div> -->
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            console.log(content);
+            console.log(this);
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script>
+</div>
