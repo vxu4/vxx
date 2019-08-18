@@ -28,7 +28,7 @@
                     <div class="dropdown">
                         <div [@openClose]="!specific ? 'open' : 'closed'" [hidden]="specific">
                             <p [@hoverText]="hoverEnLargeFilm ? 'onHover': 'offHover'">FILM & ANIMATION</p>
-                            <img src="./assets/menu-icons/UIUX_logo.png"
+                            <img src="./assets/menu-icons/filmLogo.png"
                                 (click)="navToFilm()"
                                 (mouseenter)="hoverEnlarge('film')"
                                 (mouseleave)="hoverEnlarge('film')"
@@ -36,7 +36,7 @@
                         </div>
                         <div [@openClose]="specific ? 'open' : 'closed'" [hidden]="!specific">
                             <div *ngIf="specificFilm" class="specific-category">
-                                <div><img src="./assets/menu-icons/art_logo.png"></div>
+                                <div><img src="./assets/menu-icons/filmLogo.png"></div>
                                 <div><p>it worked</p></div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                     <div class="dropdown">
                         <div [@openClose]="!specific ? 'open' : 'closed'" [hidden]="specific">
                             <p [@hoverText]="hoverEnLargePainting ? 'onHover': 'offHover'">PAINTING & 2D</p>
-                            <img src="./assets/menu-icons/art_logo.png" 
+                            <img src="./assets/menu-icons/artLogo.png" 
                                 (click)="navToPainting()"
                                 (mouseenter)="hoverEnlarge('painting')"
                                 (mouseleave)="hoverEnlarge('painting')"
@@ -52,7 +52,7 @@
                         </div>
                         <div [@openClose]="specific ? 'open' : 'closed'" [hidden]="!specific">
                             <div *ngIf="specificPainting" class="specific-category">
-                                <div><img src="./assets/menu-icons/art_logo.png"></div>
+                                <div><img src="./assets/menu-icons/artLogo.png"></div>
                                 <div><p>it worked</p></div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                     <div class="dropdown">
                         <div [@openClose]="!specific ? 'open' : 'closed'" [hidden]="specific">
                             <p [@hoverText]="hoverEnLargePhotos ? 'onHover': 'offHover'">PHOTOGRAPHY</p>
-                            <img src="./assets/menu-icons/coding_logo.png"
+                            <img src="./assets/menu-icons/filmLogo.png"
                                 (click)="navToPhotos()"
                                 (mouseenter)="hoverEnlarge('photos')"
                                 (mouseleave)="hoverEnlarge('photos')"
@@ -68,7 +68,7 @@
                         </div>
                         <div [@openClose]="specific ? 'open' : 'closed'" [hidden]="!specific">
                                 <div *ngIf="specificPhotos" class="specific-category">
-                                <div><img src="./assets/menu-icons/art_logo.png"></div>
+                                <div><img src="./assets/menu-icons/artLogo.png"></div>
                                 <div><p>it worked</p></div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="dropdown">
                         <div [@openClose]="!specific ? 'open' : 'closed'" [hidden]="specific">
                             <p [@hoverText]="hoverEnLargeDesign ? 'onHover': 'offHover'">DESIGN & WEB</p>
-                            <img src="./assets/menu-icons/art_logo.png"
+                            <img src="./assets/menu-icons/UIUXLogo.png"
                                 (click)="navToDesign()"
                                 (mouseenter)="hoverEnlarge('design')"
                                 (mouseleave)="hoverEnlarge('design')"
@@ -84,7 +84,7 @@
                         </div>
                         <div [@openClose]="specific ? 'open' : 'closed'" [hidden]="!specific">
                             <div *ngIf="specificDesign" class="specific-category">
-                                <div><img src="./assets/menu-icons/art_logo.png"></div>
+                                <div><img src="./assets/menu-icons/UIUXLogo.png"></div>
                                 <div><p>it worked</p></div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                     <div class="dropdown">
                         <div [@openClose]="!specific ? 'open' : 'closed'" [hidden]="specific">
                             <p [@hoverText]="hoverEnLargeVR ? 'onHover': 'offHover'">VR/AR & DIGITAL MEDIA</p>
-                            <img src="./assets/menu-icons/art_logo.png"
+                            <img src="./assets/menu-icons/artLogo.png"
                                 (click)="navToVR()"
                                 (mouseenter)="hoverEnlarge('vr')"
                                 (mouseleave)="hoverEnlarge('vr')"
@@ -100,7 +100,7 @@
                         </div>
                         <div [@openClose]="specific ? 'open' : 'closed'" [hidden]="!specific">
                             <div *ngIf="specificVR" class="specific-category">
-                                <div><img src="./assets/menu-icons/art_logo.png"></div>
+                                <div><img src="./assets/menu-icons/artLogo.png"></div>
                                 <div><p>it worked</p></div>
                             </div>
                         </div>
@@ -109,15 +109,14 @@
             </div>
         </div>
         <div class="mobile">
-
             <div class="align" fxLayout="column" fxLayoutAlign="right">
                 <svg width="100" 
                     height="100"
                     (click) = "fullscreenOverlay()"
                     class="collapsible"
-                    (mouseover)="handleMouseOver()"
-                    (mouseout)="handleMouseOut()">
-                    <circle #menu id="menu"
+                    (mouseover)="handleMouseOverMobile()"
+                    (mouseout)="handleMouseOutMobile()">
+                    <circle #menu id="menuMobile"
                             cx="40"
                             cy="40"
                             r="30"
@@ -137,26 +136,45 @@
             <div [@fullOverlay]="fullOver ? 'open' : 'closed'" id="myNav" class="overlay-menu">
                 <!-- Overlay content -->
                 <div class="overlay-menu-content">
-                    <!-- <div><img id="exit" src="/assets/logo.png" (click)="fullscreenOverlay()"></div> -->
                     <div class="specific-category" fxLayout="row" fxLayoutAlign="flex-end">
-                        <span><img src="./assets/menu-icons/art_logo2.png"></span>
                         <span class="cat"><p>PAINTING & 2D</p></span>
+                        <span><img src="./assets/menu-icons/artReverse.png"
+                                (click)="navToPainting('mobile')"
+                                (mouseenter)="hoverEnlarge('painting')"
+                                (mouseleave)="hoverEnlarge('painting')"
+                                [@hoverEnlarge]="hoverEnLargePainting ? 'onHover': 'offHover'"></span>
                     </div>
                     <div class="specific-category" fxLayout="row">
-                        <span><img src="./assets/menu-icons/art_logo2.png"></span>
                         <span class="cat"><p>FILM & ANIMATION</p></span>
+                        <span><img src="./assets/menu-icons/filmReverse.png"
+                            (click)="navToFilm('mobile')"
+                            (mouseenter)="hoverEnlarge('film')"
+                            (mouseleave)="hoverEnlarge('film')"
+                            [@hoverEnlarge]="hoverEnLargeFilm ? 'onHover': 'offHover'"></span>
                     </div>
                     <div class="specific-category" fxLayout="row">
-                        <span><img src="./assets/menu-icons/art_logo2.png"></span>
                         <span class="cat"><p>PHOTOGRAPHY</p></span>
+                        <span><img src="./assets/menu-icons/filmReverse.png"
+                                (click)="navToPhotos('mobile')"
+                                (mouseenter)="hoverEnlarge('photos')"
+                                (mouseleave)="hoverEnlarge('photos')"
+                                [@hoverEnlarge]="hoverEnLargePhotos ? 'onHover': 'offHover'"></span>
                     </div>
                     <div class="specific-category" fxLayout="row">
-                        <span><img src="./assets/menu-icons/art_logo2.png"></span>
                         <span class="cat"><p>DESIGN & WEB</p></span>
+                        <span><img src="./assets/menu-icons/UIUXReverse.png"
+                                (click)="navToDesign('mobile')"
+                                (mouseenter)="hoverEnlarge('design')"
+                                (mouseleave)="hoverEnlarge('design')"
+                                [@hoverEnlarge]="hoverEnLargeDesign ? 'onHover': 'offHover'"></span>
                     </div>
                     <div class="specific-category" fxLayout="row">
-                        <span><img src="./assets/menu-icons/art_logo2.png"></span>
                         <span class="cat"><p>VR/AR & DIGITAL MEDIA</p></span>
+                        <span><img src="./assets/menu-icons/artReverse.png"
+                                (click)="navToVR('mobile')"
+                                (mouseenter)="hoverEnlarge('vr')"
+                                (mouseleave)="hoverEnlarge('vr')"
+                                [@hoverEnlarge]="hoverEnLargeVR ? 'onHover': 'offHover'"></span>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,12 @@ ngb-carousel {
     justify-content: center;
 }
 
+.hover-img {
+    z-index: 9999;
+    position: fixed;
+    width: 900px;
+}
+
 .home-body {
     display: flex;
     flex-direction: column;
@@ -94,11 +100,9 @@ ngb-carousel {
                 margin: 0;
                 font-style: oblique;
                 font-weight: 1000;
-                font-size: 40px;
+                font-size: 35px;
             }
             
-
-
 
             #first-image {
                 margin: 0;

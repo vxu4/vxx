@@ -69,10 +69,10 @@ import * as d3 from 'd3';
       transition('offHover => onHover', [
         animate('0.3s')
       ]),
-    ]), 
+    ]),
     trigger('fullOverlay', [
       state('open', style({
-        width: '80%',
+        width: '70%',
       })),
       state('closed', style({
         width: '0%',
@@ -133,28 +133,43 @@ export class NavComponent implements OnInit {
 
   fullscreenOverlay() {
     this.fullOver = !this.fullOver;
-    console.log(this.fullOver);
   }
 
   public handleMouseOver() {
-    // const d3 = this.d3;
-      const circle = d3.select("#menu");
+      const circle = d3.select('#menu');
       circle
         .transition()
         .duration(250)
         // .delay(3)
-        .attr("r", 50);
+        .attr('r', 50);
   }
 
   public handleMouseOut() {
-    // const d3 = this.d3;
-      const circle = d3.select("#menu");
+      const circle = d3.select('#menu');
       circle
         .transition()
         .duration(250)
         // .delay(3)
-        .attr("r", 40);
+        .attr('r', 40);
   }
+
+  public handleMouseOverMobile() {
+    const circle = d3.select('#menuMobile');
+    circle
+      .transition()
+      .duration(250)
+      // .delay(3)
+      .attr('r', 40);
+}
+
+public handleMouseOutMobile() {
+    const circle = d3.select('#menuMobile');
+    circle
+      .transition()
+      .duration(250)
+      // .delay(3)
+      .attr('r', 30);
+}
 
   public hoverEnlarge(category: string) {
     if (category === 'painting') {
@@ -173,59 +188,77 @@ export class NavComponent implements OnInit {
       this.hoverEnLargeVR = !this.hoverEnLargeVR;
     }
   }
-  
-  cancelOtherHovers(cat : string) {
+
+  cancelOtherHovers(cat: string) {
     if (cat !== 'painting') {
       this.hoverEnLargePainting = false;
-    } 
+    }
     if (cat !== 'vr') {
       this.hoverEnLargeVR = false;
-    } 
+    }
     if (cat !== 'design') {
       this.hoverEnLargeDesign = false;
-    } 
+    }
     if (cat !== 'photos') {
       this.hoverEnLargePhotos = false;
-    } 
+    }
     if (cat !== 'film') {
       this.hoverEnLargeFilm = false;
     }
   }
 
-  navToPainting() {
-    this.specific = true;
-    this.specificPainting = true;
-    this.router.navigateByUrl(routeUrls.paintings);
-    this.cancelOtherHovers('painting');
+  navToPainting(isMobile?: string) {
+    if (this.isOpen || isMobile) {
+      this.specific = true;
+      this.specificPainting = true;
+      this.router.navigateByUrl(routeUrls.paintings);
+      this.cancelOtherHovers('painting');
+      this.fullOver = !this.fullOver;
+
+    }
   }
 
-  navToFilm() {
-    this.specific = true;
-    this.specificFilm = true;
-    this.router.navigateByUrl(routeUrls.filmAnimation);
-    this.cancelOtherHovers('film');
+  navToFilm(isMobile?: string) {
+    if (this.isOpen || isMobile) {
+      this.specific = true;
+      this.specificFilm = true;
+      this.router.navigateByUrl(routeUrls.filmAnimation);
+      this.cancelOtherHovers('film');
+      this.fullOver = !this.fullOver;
+
+    }
   }
 
-  navToDesign() {
-    this.specific = true;
-    this.specificDesign = true;
-    this.router.navigateByUrl(routeUrls.design);
-    this.cancelOtherHovers('design');
+  navToDesign(isMobile?: string) {
+    if (this.isOpen || isMobile) {
+      this.specific = true;
+      this.specificDesign = true;
+      this.router.navigateByUrl(routeUrls.design);
+      this.cancelOtherHovers('design');
+      this.fullOver = !this.fullOver;
 
+    }
   }
 
-  navToPhotos() {
-    this.specific = true;
-    this.specificPhotos = true;
-    this.router.navigateByUrl(routeUrls.photos);
-    this.cancelOtherHovers('photos');
+  navToPhotos(isMobile?: string) {
+    if (this.isOpen || isMobile) {
+      this.specific = true;
+      this.specificPhotos = true;
+      this.router.navigateByUrl(routeUrls.photos);
+      this.cancelOtherHovers('photos');
+      this.fullOver = !this.fullOver;
 
+    }
   }
 
-  navToVR() {
-    this.specific = true;
-    this.specificVR = true;
-    this.router.navigateByUrl(routeUrls.vr);
-    this.cancelOtherHovers('vr');
+  navToVR(isMobile?: string) {
+    if (this.isOpen || isMobile) {
+      this.specific = true;
+      this.specificVR = true;
+      this.router.navigateByUrl(routeUrls.vr);
+      this.cancelOtherHovers('vr');
+      this.fullOver = !this.fullOver;
+
+    }
   }
 }
