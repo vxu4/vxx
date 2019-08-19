@@ -87,23 +87,21 @@
             </div> -->
         </div> 
         <div class="mobile">
-            <div><h4>F I L M & A N I M A T I O N</h4></div>
-            <div> <img src="./assets/film/BL&S/JamieSwing.JPG"></div>
+            <div (click)="navTo('film')"><h4>F I L M & A N I M A T I O N</h4></div>
+            <div (click)="navTo('film')"> <img src="./assets/film/BL&S/JamieSwing.JPG"></div>
+            <div (click)="navTo('painting')"><h4>P A I N T I N G & 2 D</h4></div>
+            <div (click)="navTo('painting')"> <img [src]="images[1]"  alt="Random third slide"></div>
 
-            <div><h4>P A I N T I N G & 2 D</h4></div>
-            <div> <img [src]="images[1]"  alt="Random third slide"></div>
-
-            <div><h4>V R / A R & D I G I T A L</h4></div>
-            <div> <img src="./assets/vr/projections/blueOrange.png"></div>
+            <div (click)="navTo('vr')"><h4>V R / A R & D I G I T A L</h4></div>
+            <div (click)="navTo('vr')"> <img src="./assets/vr/projections/blueOrange.png"></div>
     
-            <div><h4>P H O T O G R A P H Y</h4></div>
-            <div>
+            <div (click)="navTo('photos')"><h4>P H O T O G R A P H Y</h4></div>
+            <div (click)="navTo('photos')">
                 <img [src]="images[0]"  alt="Random third slide">
                 <!-- <img class="hover-img" src="./assets/menu-icons/artReverse.png"> -->
             </div>
-            
-            <div><h4>D E S I G N & W E B</h4></div>
-            <div> <img src="./assets/design/tees/dragonTee.JPG"></div>
+            <div (click)="navTo('design')"><h4>D E S I G N & W E B</h4></div>
+            <div (click)="navTo('design')"> <img src="./assets/design/tees/dragonTee.JPG"></div>
 
             <!-- <div class="categories">
                 <span class="horizontal">

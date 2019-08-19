@@ -26,4 +26,20 @@ export class FilmAnimationComponent implements OnInit {
   navToBeluFindy() {
     this.router.navigateByUrl(routeUrls.beluFindy);
   }
+
+  navToAMap() {
+    this.router.navigateByUrl(routeUrls.aMap);
+  }
+
+  navToNewMoon() {
+    this.router.navigateByUrl(routeUrls.newMoon);
+  }
+
+  navToRushingWorld() {
+    this.router.navigateByUrl(routeUrls.rushing);
+  }
+
+  navToLilRed() {
+    this.router.navigateByUrl(routeUrls.redVr);
+  }
 }

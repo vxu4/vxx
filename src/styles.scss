@@ -67,6 +67,58 @@ body {
     }
 }
 
+.img-based {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    color: gray;
+    font-size: 10px;
+    margin: 20px 70px;
+  }
+
+  h5 {
+    color: red;
+    opacity: 0.5;
+    margin-top: 5px;
+    font-size: 15px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  img {
+    align-self: center;
+    max-width: 90vw;
+    margin-top: 30px;
+  }
+
+  .label {
+    justify-self: right;
+    align-items: right;
+    .align-right {
+      // display: flex;
+      // flex-direction: row-reverse;
+      // align-items: flex-end;
+      // align-self: flex-end;
+
+      h6 {
+        font-style: oblique;
+        color: black;
+        margin: 7px 2px 2px;
+      }
+
+      p {
+        margin: 0px;
+      }
+    }
+  }
+
+
+}
+
 //circle 
 
 @mixin on-circle($item-count, $circle-size, $item-size) {

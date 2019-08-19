@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+import { Router, ActivatedRoute } from '@angular/router';
+import { routeUrls } from '../route-urls';
 import {
   trigger,
   state,
@@ -44,7 +46,7 @@ export class HomeComponent implements OnInit {
             "./assets/paintings/patterns/patterns.jpg",
             ];
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig, private router: Router) {
     // customize default values of carousels used by this component tree
     config.interval = 3000;
     config.wrap = true;
@@ -65,12 +67,12 @@ export class HomeComponent implements OnInit {
 
   onAnimationDone(event) {
     // hide a slide after animation completes
-    if (event.fromState != 'void' && event.toState != 'selected' && this.flyPosition != 'selected') {
+    if (event.fromState !== 'void' && event.toState !== 'selected' && this.flyPosition !== 'selected') {
         this.selected = false;
     }
 
     // set the flyPosition for the selected element when it's first displayed
-    if (event.fromState == 'void' && this.selected) {
+    if (event.fromState === 'void' && this.selected) {
         this.flyPosition= "selected";
     }
   }
@@ -81,10 +83,21 @@ export class HomeComponent implements OnInit {
   }
 
   display(cat: string) {
-    console.log('hit');
     this.isOpen = !this.isOpen;
     this.displayPainting = !this.displayPainting;
   }
 
-
+  navTo(cat: string) {
+    if (cat === 'film') {
+      this.router.navigateByUrl(routeUrls.filmAnimation);
+    } else if (cat === 'painting') {
+      this.router.navigateByUrl(routeUrls.paintings);
+    } else if (cat === 'photos') {
+      this.router.navigateByUrl(routeUrls.photos);
+    } else if (cat === 'vr') {
+      this.router.navigateByUrl(routeUrls.vr);
+    } else if (cat === 'design') {
+      this.router.navigateByUrl(routeUrls.design);
+    }
+  }
 }

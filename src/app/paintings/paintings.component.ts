@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { routeUrls } from '../route-urls';
 
 @Component({
   selector: 'app-paintings',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaintingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navToHS() {
+    this.router.navigateByUrl(routeUrls.hs);
   }
 
 }
