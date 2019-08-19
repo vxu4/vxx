@@ -105,8 +105,7 @@ export class NavComponent implements OnInit {
   hoverEnLargeFilm = false;
   hoverEnLargeVR = false;
 
-  constructor( private router: Router,
-    private route: ActivatedRoute ) { }
+  constructor( private router: Router) { }
 
   @ViewChild('content', {static: false}) content: ElementRef;
 
@@ -214,7 +213,6 @@ public handleMouseOutMobile() {
       this.router.navigateByUrl(routeUrls.paintings);
       this.cancelOtherHovers('painting');
       this.fullOver = !this.fullOver;
-
     }
   }
 
@@ -225,7 +223,6 @@ public handleMouseOutMobile() {
       this.router.navigateByUrl(routeUrls.filmAnimation);
       this.cancelOtherHovers('film');
       this.fullOver = !this.fullOver;
-
     }
   }
 
@@ -236,7 +233,6 @@ public handleMouseOutMobile() {
       this.router.navigateByUrl(routeUrls.design);
       this.cancelOtherHovers('design');
       this.fullOver = !this.fullOver;
-
     }
   }
 
