@@ -7,6 +7,47 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles.8a60efb9113bd58c8001.css"></head>
 <body>
-  <app-root></app-root>
+  <app-root>
+      <style>
+          app-root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:red;
+
+            color: white;
+            text-transform: uppercase;
+            font-family: 'Racing Sans One';
+            font-size: 2.5em;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+          }
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        
+          @keyframes dots {
+            50% {
+              transform: translateY(-.4rem);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        
+          .d {
+            animation: dots 1.5s ease-out infinite;
+          }
+          .d-2 {
+            animation-delay: .5s;
+          }
+          .d-3 {
+            animation-delay: 1s;
+          }
+          </style>
+        
+          Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span>
+  </app-root>
 <script src="polyfills-es5.dc9c06d46e976533d6df.js" nomodule defer></script><script src="polyfills-es2015.7b0f30ad843127988b71.js" type="module"></script><script src="runtime-es2015.3784b91d2ade2da00945.js" type="module"></script><script src="main-es2015.52741cb473457e4a091d.js" type="module"></script><script src="runtime-es5.3784b91d2ade2da00945.js" nomodule defer></script><script src="main-es5.52741cb473457e4a091d.js" nomodule defer></script></body>
 </html>
