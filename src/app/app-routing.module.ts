@@ -27,6 +27,8 @@ import { RushingWorldComponent } from './film-animation/rushing-world/rushing-wo
 import { RedVrComponent } from './film-animation/red-vr/red-vr.component';
 
 import { DesignComponent } from './design/design.component';
+import { GreenhouseComponent } from './photos/greenhouse/greenhouse.component';
+import { TrioComponent } from './photos/trio/trio.component';
 
 
 
@@ -37,6 +39,9 @@ const appRoutes: Routes = [
 { path: routeUrls.vr, component: VRComponent },
 
 { path: routeUrls.photos, component: PhotosComponent },
+{ path: routeUrls.greenhouse, component: GreenhouseComponent },
+{ path: routeUrls.trio, component: TrioComponent },
+
 
 { path: routeUrls.paintings, component: PaintingsComponent },
 { path: routeUrls.landHands, component: LandHandsComponent },

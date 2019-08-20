@@ -6,6 +6,9 @@ export class routeUrls {
     public static redVr = 'redVr';
 
     public static photos = 'photos';
+    public static greenhouse = 'greenhouse';
+    public static trio = 'trio';
+
 
     public static paintings = 'paintings';
     public static hs = 'hs';

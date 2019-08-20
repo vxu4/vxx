@@ -1,16 +1,18 @@
 <div class="photos-body">
     <div><h3>P H O T O G R A P H Y</h3></div>
 
-    <div class="photo-section"><img src="./assets/photos/greenhouse/BD1.jpg">
-        <div class="label"><p> Boniat & Daneva</p></div>
+    <div class="photo-section">
+        <img src="./assets/photos/greenhouse/BD1.jpg" (click)="navToBD()">
+        <div class="label" (click)="navToBD()"><p> Boniat & Daneva</p></div>
+    </div>
+
+    <div class="photo-section">
+        <img src="./assets/photos/trio/trio.jpg" (click)="navToTrio()"> 
+        <div class="label" (click)="navToTrio()"><p>TRIO</p></div>
     </div>
 
     <div class="photo-section"><img src="./assets/photos/china/mom.PNG">
         <div class="label"><p>China</p></div>
-    </div>
-
-    <div class="photo-section"><img src="./assets/photos/trio/trio.jpg">
-        <div class="label"><p>TRIO</p></div>
     </div>
 
     <div class="photo-section"><img src="./assets/photos/tomi/horiz1.jpg">

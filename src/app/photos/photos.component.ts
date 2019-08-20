@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { routeUrls } from '../route-urls';
 
 @Component({
   selector: 'app-photos',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  navToBD() {
+    this.router.navigateByUrl(routeUrls.greenhouse);
+  }
+
+  navToTrio() {
+    this.router.navigateByUrl(routeUrls.trio);
+  }
 }

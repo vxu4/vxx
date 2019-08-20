@@ -25,6 +25,10 @@ import { PatternsComponent } from './paintings/patterns/patterns.component';
 import { NewmoonComponent } from './film-animation/newmoon/newmoon.component';
 import { RushingWorldComponent } from './film-animation/rushing-world/rushing-world.component';
 import { RedVrComponent } from './film-animation/red-vr/red-vr.component';
+import { ApopheniaComponent } from './vr/apophenia/apophenia.component';
+import { ProjectionsComponent } from './vr/projections/projections.component';
+import { GreenhouseComponent } from './photos/greenhouse/greenhouse.component';
+import { TrioComponent } from './photos/trio/trio.component';
 
 
 
@@ -53,7 +57,11 @@ const appRoutes: Routes = [
     PatternsComponent,
     NewmoonComponent,
     RushingWorldComponent,
-    RedVrComponent
+    RedVrComponent,
+    ApopheniaComponent,
+    ProjectionsComponent,
+    GreenhouseComponent,
+    TrioComponent
   ],
   imports: [
     BrowserModule,
