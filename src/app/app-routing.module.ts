@@ -29,6 +29,8 @@ import { RedVrComponent } from './film-animation/red-vr/red-vr.component';
 import { DesignComponent } from './design/design.component';
 import { GreenhouseComponent } from './photos/greenhouse/greenhouse.component';
 import { TrioComponent } from './photos/trio/trio.component';
+import { ApopheniaComponent } from './vr/apophenia/apophenia.component';
+import { ProjectionsComponent } from './vr/projections/projections.component';
 
 
 
@@ -37,6 +39,9 @@ const appRoutes: Routes = [
 { path: '', component: HomeComponent },
 
 { path: routeUrls.vr, component: VRComponent },
+{ path: routeUrls.apo, component: ApopheniaComponent },
+{ path: routeUrls.projections, component: ProjectionsComponent },
+
 
 { path: routeUrls.photos, component: PhotosComponent },
 { path: routeUrls.greenhouse, component: GreenhouseComponent },

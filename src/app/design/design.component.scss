@@ -15,12 +15,21 @@
         .label {
             display: flex;
             flex-direction: row-reverse;
-            // align-items: flex-end;
         }
 
-        img {
-            max-width: 85vw;
-            height: auto;
+        @media only screen and (max-width: 1200px) {
+            img {
+                margin-top: 50px;
+                max-width: 85vw;
+                height: auto;
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            img {
+                margin-top: 50px;
+                max-width: 60vw;
+                height: auto;
+            }
         }
     }
 }

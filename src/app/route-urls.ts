@@ -2,8 +2,9 @@ export class routeUrls {
     public static home = '';
 
     public static vr = 'vr';
-    public static rushing = 'rushing';
-    public static redVr = 'redVr';
+    public static apo = 'apo';
+    public static projections = 'projections';
+
 
     public static photos = 'photos';
     public static greenhouse = 'greenhouse';
@@ -23,6 +24,8 @@ export class routeUrls {
     public static beluFindy = 'beluFindy';
     public static aMap = 'aMap';
     public static newMoon = 'newMoon';
+    public static rushing = 'rushing';
+    public static redVr = 'redVr';
 
     public static design = 'design';
     public static none = '**';

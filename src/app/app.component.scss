@@ -1,8 +1,70 @@
 @import '../styles.scss';
 
+.loading {
+    height: 100vh;
+    z-index: 99999;
+
+    color: red;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  }
+
+  @media only screen and (min-width: 1200px){
+      .loading {
+        position: fixed;
+        top: 30vh;
+        left: 45vw;
+      }
+  }
+
+  @media only screen and (max-width: 1200px){
+    .loading {
+      position: fixed;
+      top: 35vh;
+      left: 40vw;
+    }
+  }
+
+  @keyframes dots {
+    50% {
+      transform: translateY(-.4rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spinner {
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .d {
+    animation: dots 1.5s ease-out infinite;
+    width: 70px;
+    height: auto;
+  }
+  .d-2 {
+    animation-delay: .5s;
+  }
+  .d-3 {
+    animation-delay: 1s;
+  }
+
+  .spinner {
+    width: 100px;
+    animation: spinner 3.5s ease-out infinite;
+  }
+
 @media only screen and (min-width: 1200px) {
     .side-bar {
-        justify-content: space-between;
+        // justify-content: space-between;
 
         .header {
             justify-content: flex-start;
@@ -16,6 +78,7 @@
     
             h1 {
                 margin-top: 50px;
+                font-size: 30px;
             }
         }
     }
@@ -52,13 +115,8 @@
             font-size: 20px;
             // display: inline;
         }
-
     }
-
-   
-
     app-nav {
-        // justify-self: left;
         position: fixed;
         top: 0px;
         right: 5px;

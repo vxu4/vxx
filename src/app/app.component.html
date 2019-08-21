@@ -2,7 +2,10 @@
   <title>Victoria Xu</title>
 </head>
 <body>
-  <div class="main">
+  <div *ngIf="loading" class="loading">
+    <span><img class="spinner" src="./assets/menu-icons/spinner.png"></span>
+  </div>
+  <div class="main" [@loader]="!loading ? 'open' : 'closed'">
     <div class="side-bar">
       <div class="header">
         <div><img id="logo" src="./assets/logo2.png" (click)="navToHome()"></div>
@@ -13,6 +16,5 @@
       </div>
     </div>
     <router-outlet></router-outlet>
-
   </div>
 </body>

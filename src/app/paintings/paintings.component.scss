@@ -1,26 +1,60 @@
-.paintings-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .paintings-section {
-        p {
-            color: gray;
-        }
-
-        h3 {
-            margin-bottom: 50px;
-        }
-
-        .label {
-            display: flex;
-            flex-direction: row-reverse;
-            // align-items: flex-end;
-        }
-
-        img {
-            max-width: 85vw;
-            height: auto;
+@media only screen and (max-width: 1200px) {
+    .paintings-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .paintings-section {
+            p {
+                color: gray;
+            }
+    
+            h3 {
+                margin-bottom: 50px;
+            }
+    
+            .label {
+                display: flex;
+                flex-direction: row-reverse;
+                // align-items: flex-end;
+            }
+    
+            img {
+                max-width: 85vw;
+                height: auto;
+            }
         }
     }
 }
+
+@media only screen and (min-width: 1200px) {
+    .paintings-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .paintings-section {
+            p {
+                margin-top: 5px;
+                color: gray;
+            }
+    
+            h3 {
+                display: block;
+                margin-bottom: 0px;
+            }
+    
+            .label {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+    
+            img {
+                margin-top: 50px;
+                max-width: 50vw;
+                height: auto;
+            }
+        }
+    }
+}
+
