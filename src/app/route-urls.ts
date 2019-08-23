@@ -1,7 +1,7 @@
 export class routeUrls {
     public static home = '';
 
-    public static vr = 'vr';
+    public static vr = 'interactive';
     public static apo = 'apo';
     public static projections = 'projections';
 
