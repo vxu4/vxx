@@ -18,8 +18,15 @@ export class VRComponent implements OnInit {
     this.router.navigateByUrl(routeUrls.apo);
   }
 
-  Projections() {
+  navToProjections() {
     this.router.navigateByUrl(routeUrls.projections);
   }
 
+  navToRed() {
+    this.router.navigateByUrl(routeUrls.redVr);
+  }
+
+  navToRushing() {
+    this.router.navigateByUrl(routeUrls.rushing);
+  }
 }
